@@ -1,0 +1,39 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Elk Audio <build@elk.audio>
+Date: Fri, 01 Jan 2021 00:00:00 +0000
+Subject: [PATCH] Add OBXF_BUILD_CLAP option to disable CLAP format
+
+Allow disabling CLAP plugin format via -DOBXF_BUILD_CLAP=OFF.
+---
+ CMakeLists.txt | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -29,6 +29,7 @@
+ option(ENABLE_ASAN "Enable Address Sanitizer" OFF)
+ option(ENABLE_TSAN "Enable Thread Sanitizer" OFF)
+ option(COPY_PLUGIN_AFTER_BUILD "Copy plugin after build is complete" OFF)
++option(OBXF_BUILD_CLAP "Build CLAP plugin format" ON)
+ 
+ include(libs/sst/sst-plugininfra/cmake/git-version-functions.cmake)
+ version_from_versionfile_or_git()
+@@ -201,9 +202,11 @@
+     endif()
+ endif()
+ 
+-clap_juce_extensions_plugin(TARGET OB-Xf
+-    CLAP_ID "org.surge-synth-team.OB-Xf"
+-    CLAP_FEATURES instrument synthesizer "virtual analog" analog)
++if(OBXF_BUILD_CLAP)
++    clap_juce_extensions_plugin(TARGET OB-Xf
++        CLAP_ID "org.surge-synth-team.OB-Xf"
++        CLAP_FEATURES instrument synthesizer "virtual analog" analog)
++endif()
+ 
+ target_compile_definitions(OB-Xf PRIVATE)
+ 
+-- 
+2.39.0
+

@@ -5,5 +5,14 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0-only;m
 inherit packagegroup
 
 RDEPENDS:${PN} = "\
+    airwindows \
+    dexed \
+    dragonfly-reverb \
     gxplugins \
+    infamousplugins \
+    irconvolution \
+    juicysf \
+    ob-xf \
+    shiro \
+    x42 \
 "

@@ -6,6 +6,7 @@ inherit packagegroup
 
 RDEPENDS:${PN} = "\
     airwindows \
+    cloudreverb \
     dexed \
     dragonfly-reverb \
     gxplugins \
@@ -13,6 +14,7 @@ RDEPENDS:${PN} = "\
     irconvolution \
     juicysf \
     ob-xf \
+    rsalgoverb \
     shiro \
     x42 \
 "

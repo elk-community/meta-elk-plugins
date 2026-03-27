@@ -50,6 +50,8 @@ do_install() {
 
 PACKAGES =+ "${PN_VST3}"
 FILES:${PN_VST3} += "${PLUGIN_INSTALL_DIR}/vst3"
+ALLOW_EMPTY:${PN} = "1"
+RDEPENDS:${PN} = "${PN_VST3}"
 
 RDEPENDS:${PN_VST3} = "fluidsynth"
 

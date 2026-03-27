@@ -12,6 +12,7 @@ RDEPENDS:${PN} = "\
     gxplugins \
     infamousplugins \
     irconvolution \
+    jc303 \
     juicysf \
     ob-xf \
     rsalgoverb \

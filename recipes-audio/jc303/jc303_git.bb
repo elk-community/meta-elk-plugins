@@ -14,7 +14,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=903d0fc86333f132c49874fae0bc8c62"
 #                                → math_approx
 #                                → ea_variant
 SRC_URI = " \
-    git://github.com/elk-community/jc303;protocol=https;nobranch=1;name=jc303 \
+    git://github.com/elk-community/jc303;protocol=https;nobranch=1;name=jc303;destsuffix=git \
     gitsm://github.com/free-audio/clap-juce-extensions.git;protocol=https;nobranch=1;name=clap;destsuffix=git/lib/juce-clap-extensions-src \
     git://github.com/Chowdhury-DSP/chowdsp_utils.git;protocol=https;nobranch=1;name=chowdsp;destsuffix=git/lib/chowdsp_utils-src \
     gitsm://github.com/jatinchowdhury18/RTNeural.git;protocol=https;nobranch=1;name=rtneural;destsuffix=git/lib/rtneural-src \
@@ -29,8 +29,8 @@ SRCREV_mathapprox = "0c68d4d17242d707ba07fa7f1901692b7ed72d58"
 SRCREV_eavariant = "3fce49cfca50ba3b05026d41ffc4911a8e653378"
 SRCREV_FORMAT = "jc303"
 
-PV = "0.12.3+git${SRCPV}"
-S = "${WORKDIR}/git"
+PV = "0.12.3+git"
+S = "${UNPACKDIR}/git"
 
 inherit cmake audio-plugin-common
 

@@ -13,9 +13,7 @@ DEPENDS = "pkgconfig-native"
 
 SRC_URI = "gitsm://github.com/elk-community/SHIRO-Plugins;protocol=https;nobranch=1"
 SRCREV = "7850099cec1153cc40b4c007e21723437a77aecf"
-PV = "0.0+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.0+git"
 # Only build the VST target per plugin — the only format confirmed to work on Elk Pi
 # (per README-ELK.md). The DPF build system detects the cross-toolchain via
 # 'CC -dumpmachine' and sets CPU/OS flags accordingly; Yocto's CC/CXX/CFLAGS/CXXFLAGS

@@ -11,9 +11,7 @@ SRC_URI = " \
     file://0001-Add-OBXF_BUILD_CLAP-option-to-disable-CLAP-format.patch \
 "
 SRCREV = "17101d5216b8a610ea767aa4e395e66eb3b2ce1f"
-PV = "0.0+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.0+git"
 inherit cmake audio-plugin-common
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion.

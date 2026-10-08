@@ -12,9 +12,7 @@ DEPENDS = "lv2 pkgconfig-native"
 
 SRC_URI = "git://github.com/ssj71/infamousPlugins;protocol=https;nobranch=1"
 SRCREV = "8c0e11ecac624e014caba00e5cf4fb0ca2faa806"
-PV = "0.0+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.0+git"
 # PLUGINS is a CMake CACHE STRING; overriding via EXTRA_OECMAKE is the idiomatic
 # CMake approach — no patch needed. ewham and lushlife are excluded from the build.
 #

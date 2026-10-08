@@ -26,28 +26,28 @@ SRCREV_tuna      = "014a69826959a69a3d90af1de85291334637b859"
 SRCREV_testsignal = "4426df0ab2a5653d09ca9fd8a08966fe247ec900"
 SRCREV_FORMAT    = "fat1_tuna_testsignal"
 
-PV = "0.0+git${SRCPV}"
+PV = "0.0+git"
 
-# All three repos are siblings in WORKDIR; no single canonical S directory
-S = "${WORKDIR}"
+# All three repos are siblings in UNPACKDIR; no single canonical S directory
+S = "${UNPACKDIR}"
 
 do_compile() {
     for plugin in fat1 tuna testsignal; do
-        cd ${WORKDIR}/${plugin}
+        cd ${UNPACKDIR}/${plugin}
         make MOD=TRUE PKG_CONFIG="${STAGING_BINDIR_NATIVE}/pkg-config"
-        cd ${WORKDIR}
+        cd ${UNPACKDIR}
     done
 }
 
 do_install() {
     install -d ${D}${PLUGIN_INSTALL_DIR}/lv2
     for plugin in fat1 tuna testsignal; do
-        cd ${WORKDIR}/${plugin}
+        cd ${UNPACKDIR}/${plugin}
         make install MOD=TRUE \
             DESTDIR=${D} \
             LV2DIR=${PLUGIN_INSTALL_DIR}/lv2 \
             PKG_CONFIG="${STAGING_BINDIR_NATIVE}/pkg-config"
-        cd ${WORKDIR}
+        cd ${UNPACKDIR}
     done
 }
 

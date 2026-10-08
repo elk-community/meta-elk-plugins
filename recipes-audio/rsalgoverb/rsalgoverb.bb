@@ -8,9 +8,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 # so the submodule is fetched but not used during the build.
 SRC_URI = "gitsm://github.com/elk-community/RSAlgorithmicVerb;protocol=https;nobranch=1"
 SRCREV = "2f69b1d94d1d15ce0694763810d0f984b9e32d92"
-PV = "0.5.5+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.5.5+git"
 inherit cmake audio-plugin-common
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion

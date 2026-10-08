@@ -8,9 +8,7 @@ SRC_URI = " \
     gitsm://github.com/elk-community/juicysfplugin;protocol=https;nobranch=1 \
 "
 SRCREV = "e508cb08a6f67c9d8b3ea7bf602111c5f4654c26"
-PV = "3.0.0+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "3.0.0+git"
 inherit cmake audio-plugin-common
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion.

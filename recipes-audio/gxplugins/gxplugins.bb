@@ -12,9 +12,7 @@ DEPENDS = "lv2 pkgconfig-native"
 
 SRC_URI = "gitsm://github.com/elk-community/GxPlugins.lv2;protocol=https;nobranch=1"
 SRCREV = "b830dca668af2bbf6f90d5b35097f2790482ba06"
-PV = "0.0+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.0+git"
 # build-elk.sh hardcodes ARM32 OPT_FLAGS which break aarch64 builds. Instead,
 # we replicate its Makefile-patching logic here and call make directly so that
 # Yocto's CFLAGS/CXXFLAGS (correctly tuned for the target) are used as-is.

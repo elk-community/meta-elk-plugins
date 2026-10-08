@@ -15,9 +15,7 @@ VST2SDK_PATH ?= ""
 
 SRC_URI = "git://github.com/elk-community/airwindows;protocol=https;nobranch=1"
 SRCREV = "801b72ff9a36fff138d974f40c246afa5b0d8e15"
-PV = "0.0+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.0+git"
 # CMakeLists.txt lives under plugins/LinuxVST/
 OECMAKE_SOURCEPATH = "${S}/plugins/LinuxVST"
 

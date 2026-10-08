@@ -10,9 +10,7 @@ SRC_URI = " \
     gitsm://github.com/elk-community/dexed;protocol=https;nobranch=1 \
 "
 SRCREV = "87b8989c99fadd6d12b6ff6ac86111493842ed86"
-PV = "1.0.1+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "1.0.1+git"
 inherit cmake audio-plugin-common
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion.

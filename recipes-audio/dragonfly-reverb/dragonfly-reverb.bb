@@ -13,9 +13,7 @@ DEPENDS = "pkgconfig-native"
 
 SRC_URI = "gitsm://github.com/elk-community/dragonfly-reverb;protocol=https;nobranch=1"
 SRCREV = "a91c5122c46a0f6fec5f838ad063b25ad391973a"
-PV = "0.0+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.0+git"
 # This DPF version unconditionally errors when DGL (OpenGL+X11) is not found,
 # even though the headless VST target has no dependency on it. Patch the error
 # out so the build proceeds with HAVE_DGL empty (headless VST only).

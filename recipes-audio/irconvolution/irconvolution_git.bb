@@ -9,9 +9,7 @@ SRC_URI = " \
     gitsm://github.com/elk-community/irconvolution;protocol=https;nobranch=1 \
 "
 SRCREV = "f86db60f7fae62b0147bff22ee4057a72251e1fb"
-PV = "0.0.1+git${SRCPV}"
-S = "${WORKDIR}/git"
-
+PV = "0.0.1+git"
 inherit cmake audio-plugin-common
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion.

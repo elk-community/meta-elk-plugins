@@ -59,3 +59,7 @@ ALLOW_EMPTY:${PN} = "1"
 RDEPENDS:${PN} = "${PN_VST3}"
 
 INSANE_SKIP:${PN_VST3} += "already-stripped"
+# The CMake build embeds its source and build dirs as informational
+# strings (geninclude/version_information.cpp).
+INSANE_SKIP:${PN_VST3} += "buildpaths"
+INSANE_SKIP:${PN}-src += "buildpaths"

@@ -28,6 +28,7 @@ EXTRA_OECMAKE += "\
     -DPLUGINS=casynth\;envfollower\;hip2b\;powerup\;powercut\;cheapdist\;stuck\;bentdelay\;mindi\;octolo \
     -DCMAKE_INSTALL_PREFIX=${PLUGIN_INSTALL_DIR} \
     -DLIBDIR=. \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 "
 
 # LV2 plugin bundles + infamous-rule utility binary

@@ -6,35 +6,29 @@ Subject: [PATCH] Add OBXF_BUILD_CLAP option to disable CLAP format
 Upstream-Status: Inappropriate [Elk build configuration]
 Allow disabling CLAP plugin format via -DOBXF_BUILD_CLAP=OFF.
 ---
- CMakeLists.txt | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f366743..d1c4195 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -29,6 +29,7 @@
- option(ENABLE_ASAN "Enable Address Sanitizer" OFF)
- option(ENABLE_TSAN "Enable Thread Sanitizer" OFF)
+@@ -31,6 +31,7 @@ option(ENABLE_TSAN "Enable Thread Sanitizer" OFF)
  option(COPY_PLUGIN_AFTER_BUILD "Copy plugin after build is complete" OFF)
+ option(OBXF_IOS_DISABLE_CODESIGN "Disable Xcode code signing for iOS targets" ON)
+ option(OBXF_BUILD_PYTHON_BINDINGS "Build OB-Xf Python bindings" OFF)
 +option(OBXF_BUILD_CLAP "Build CLAP plugin format" ON)
  
- include(libs/sst/sst-plugininfra/cmake/git-version-functions.cmake)
- version_from_versionfile_or_git()
-@@ -201,9 +202,11 @@
-     endif()
+ set(OBXF_IOS_DEVELOPMENT_TEAM "" CACHE STRING "Apple Developer Team ID for iOS signing")
+ 
+@@ -285,7 +286,7 @@ if(OBXF_IS_IOS AND CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+         -Wno-error=shorten-64-to-32)
  endif()
  
--clap_juce_extensions_plugin(TARGET OB-Xf
--    CLAP_ID "org.surge-synth-team.OB-Xf"
--    CLAP_FEATURES instrument synthesizer "virtual analog" analog)
-+if(OBXF_BUILD_CLAP)
-+    clap_juce_extensions_plugin(TARGET OB-Xf
-+        CLAP_ID "org.surge-synth-team.OB-Xf"
-+        CLAP_FEATURES instrument synthesizer "virtual analog" analog)
-+endif()
- 
- target_compile_definitions(OB-Xf PRIVATE)
- 
+-if(NOT OBXF_IS_IOS)
++if(NOT OBXF_IS_IOS AND OBXF_BUILD_CLAP)
+     clap_juce_extensions_plugin(TARGET OB-Xf
+         CLAP_ID "org.surge-synth-team.OB-Xf"
+         CLAP_FEATURES instrument synthesizer "virtual analog" analog)
 -- 
 2.39.0
-

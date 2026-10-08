@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 # find_package(JUCE CONFIG REQUIRED) resolves JUCE from the staging sysroot,
 # so the submodule is fetched but not used during the build.
 SRC_URI = "gitsm://github.com/elk-community/RSAlgorithmicVerb;protocol=https;nobranch=1"
-SRCREV = "2f69b1d94d1d15ce0694763810d0f984b9e32d92"
+SRCREV = "20c04d805b56a92eb3c8df965fedac3ecb2d0731"
 PV = "0.5.5+git"
 inherit cmake audio-plugin-common pkgconfig
 

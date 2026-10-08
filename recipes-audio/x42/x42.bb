@@ -21,8 +21,8 @@ SRC_URI = "\
     git://github.com/elk-community/testsignal.lv2;protocol=https;nobranch=1;name=testsignal;destsuffix=testsignal \
 "
 
-SRCREV_fat1      = "725b8d19ed0b4337790e7d57e3dbf61af3e077b0"
-SRCREV_tuna      = "014a69826959a69a3d90af1de85291334637b859"
+SRCREV_fat1      = "153c5a40662648bb4861bee1b04449f27a1e068e"
+SRCREV_tuna      = "4b46d96a1d90aaf38cbcfd36ecaa2225b5e60cd9"
 SRCREV_testsignal = "4426df0ab2a5653d09ca9fd8a08966fe247ec900"
 SRCREV_FORMAT    = "fat1_tuna_testsignal"
 

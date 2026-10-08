@@ -12,26 +12,23 @@ PLUGIN_INSTALL_DIR = "/opt/plugins"
 DEPENDS = ""
 
 SRC_URI = "gitsm://github.com/elk-community/dragonfly-reverb;protocol=https;nobranch=1"
-SRCREV = "a91c5122c46a0f6fec5f838ad063b25ad391973a"
+SRCREV = "440ec7b3b3db2fec34b9f80cf4890102ca14d1c3"
 PV = "0.0+git"
 # This DPF version unconditionally errors when DGL (OpenGL+X11) is not found,
 # even though the headless VST target has no dependency on it. Patch the error
 # out so the build proceeds with HAVE_DGL empty (headless VST only).
-do_configure:prepend() {
-    sed -i '/^\$(error DGL missing/d' ${S}/dpf/Makefile.base.mk
-}
-
-# Build freeverb3 and the VST plugin without going through the top-level Makefile
-# (which also includes dpf/Makefile.base.mk and would re-trigger the DGL check).
 do_compile() {
     # NOOPT=true replaces the hardcoded x86 '-msse -msse2' BASE_OPTS with
     # arch-neutral '-O2 -fdata-sections -ffunction-sections'; Yocto's CFLAGS
-    # (with correct aarch64 tuning) are appended via BUILD_C/CXX_FLAGS anyway
-    make -C ${S}/freeverb3 NOOPT=true PKG_CONFIG="${STAGING_BINDIR_NATIVE}/pkg-config"
-    make -C ${S}/plugins/dragonfly-reverb vst NOOPT=true PKG_CONFIG="${STAGING_BINDIR_NATIVE}/pkg-config"
+    # (with correct aarch64 tuning) are appended via BUILD_C/CXX_FLAGS anyway.
+    # freeverb3 is now inlined in common/freeverb and built with each plugin.
+    make -C ${S}/dpf/dgl USE_FILE_BROWSER=false NOOPT=true PKG_CONFIG="${STAGING_BINDIR_NATIVE}/pkg-config"
+    for plugin in hall room plate; do
+        make -C ${S}/plugins/dragonfly-${plugin}-reverb vst2 USE_FILE_BROWSER=false NOOPT=true PKG_CONFIG="${STAGING_BINDIR_NATIVE}/pkg-config"
+    done
+    make -C ${S}/plugins/dragonfly-early-reflections vst2 USE_FILE_BROWSER=false NOOPT=true PKG_CONFIG="${STAGING_BINDIR_NATIVE}/pkg-config"
 }
 
-# DPF places output in ${S}/bin/
 do_install() {
     install -d ${D}${PLUGIN_INSTALL_DIR}/vst
     find ${S}/bin -maxdepth 1 -name "*-vst.so" -type f \

@@ -7,8 +7,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 # find_package(JUCE CONFIG REQUIRED) resolves JUCE from the staging sysroot,
 # so the submodule is fetched but not used during the build.
 SRC_URI = "gitsm://github.com/elk-community/CloudReverb;protocol=https;nobranch=1"
-SRCREV = "5a45b59a80153818dec6a2e6632f2afce79d3b60"
-PV = "0.4.1+git"
+SRCREV = "6f2f4f0a9627410d258f76ecdba65ab479ce6994"
+PV = "0.5+git"
 inherit cmake audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion

@@ -21,7 +21,7 @@ SRC_URI = " \
     git://github.com/Chowdhury-DSP/math_approx.git;protocol=https;nobranch=1;name=mathapprox;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX}/lib/math_approx-src \
     git://github.com/eyalamirmusic/Variant.git;protocol=https;nobranch=1;name=eavariant;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX}/lib/ea_variant-src \
 "
-SRCREV_jc303 = "9f3456ee729edbcbc1a2913089ea0a834758c658"
+SRCREV_jc303 = "c85a99b095984af04d3e203b2ba223a9f28290ae"
 SRCREV_clap = "e1f67893cc409a40c1154fa2e78c97046da24ce0"
 SRCREV_chowdsp = "ffc70ba399f9afaeefb996eb14e55a1d487270b8"
 SRCREV_rtneural = "04cb333bc4b174760958a77c7ce076eae38fe8e4"
@@ -29,7 +29,7 @@ SRCREV_mathapprox = "0c68d4d17242d707ba07fa7f1901692b7ed72d58"
 SRCREV_eavariant = "3fce49cfca50ba3b05026d41ffc4911a8e653378"
 SRCREV_FORMAT = "jc303"
 
-PV = "0.12.3+git"
+PV = "0.13.0+git"
 
 inherit cmake audio-plugin-common pkgconfig
 

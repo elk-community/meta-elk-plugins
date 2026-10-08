@@ -11,7 +11,7 @@ PLUGIN_INSTALL_DIR = "/opt/plugins"
 DEPENDS = "lv2"
 
 SRC_URI = "gitsm://github.com/elk-community/GxPlugins.lv2;protocol=https;nobranch=1"
-SRCREV = "b830dca668af2bbf6f90d5b35097f2790482ba06"
+SRCREV = "fb8864a4b069c429122a2918fdbcbfbf00260b57"
 PV = "0.0+git"
 # build-elk.sh hardcodes ARM32 OPT_FLAGS which break aarch64 builds. Instead,
 # we replicate its Makefile-patching logic here and call make directly so that

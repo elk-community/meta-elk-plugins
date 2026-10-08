@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 SRC_URI = " \
     gitsm://github.com/elk-community/dexed;protocol=https;nobranch=1 \
 "
-SRCREV = "87b8989c99fadd6d12b6ff6ac86111493842ed86"
+SRCREV = "4bc6bb017976d3f0cd6290d8c0cef071962f9639"
 PV = "1.0.1+git"
 inherit cmake audio-plugin-common pkgconfig
 

@@ -12,7 +12,7 @@ PLUGIN_INSTALL_DIR = "/opt/plugins"
 DEPENDS = ""
 
 SRC_URI = "gitsm://github.com/elk-community/SHIRO-Plugins;protocol=https;nobranch=1"
-SRCREV = "7850099cec1153cc40b4c007e21723437a77aecf"
+SRCREV = "61bc69aa777be0cc36aae39640184136bbda0fc5"
 PV = "0.0+git"
 # Only build the VST target per plugin — the only format confirmed to work on Elk Pi
 # (per README-ELK.md). The DPF build system detects the cross-toolchain via

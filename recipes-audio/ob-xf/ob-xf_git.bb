@@ -10,7 +10,7 @@ SRC_URI = " \
     gitsm://github.com/elk-community/OB-Xf;protocol=https;nobranch=1 \
     file://0001-Add-OBXF_BUILD_CLAP-option-to-disable-CLAP-format.patch \
 "
-SRCREV = "706588cfcc72e08bdbb40b339089edd42644badd"
+SRCREV = "69d3adc0f896e5a5a6c6ab78a4b5248d5943256a"
 PV = "0.0+git"
 inherit cmake audio-plugin-common pkgconfig
 

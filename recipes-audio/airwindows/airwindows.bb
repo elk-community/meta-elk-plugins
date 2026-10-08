@@ -59,3 +59,8 @@ FILES:${PN} += "${PLUGIN_INSTALL_DIR}/vst"
 
 # cmake Release builds strip symbols; suppress the QA warning
 INSANE_SKIP:${PN} += "already-stripped"
+
+# The VST2 SDK sources are symlinked in from VST2SDK_PATH (outside ${S}),
+# so their DWARF paths keep the build directory. Only the -dbg package
+# is affected.
+INSANE_SKIP:${PN}-dbg += "buildpaths"

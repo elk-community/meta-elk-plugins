@@ -12,7 +12,7 @@ SRC_URI = " \
 "
 SRCREV = "17101d5216b8a610ea767aa4e395e66eb3b2ce1f"
 PV = "0.0+git"
-inherit cmake audio-plugin-common
+inherit cmake audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion.
 PLUGIN_INSTALL_DIR = "/opt/plugins"
@@ -30,7 +30,6 @@ DEPENDS = " \
     libxinerama \
     libxrandr \
     libxcursor \
-    pkgconfig-native \
 "
 
 EXTRA_OECMAKE = " \

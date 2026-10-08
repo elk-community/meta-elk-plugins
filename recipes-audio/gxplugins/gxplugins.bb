@@ -3,12 +3,12 @@ HOMEPAGE = "https://github.com/elk-community/GxPlugins.lv2"
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=84dcc94da3adb52b53ae4fa38fe49e5d"
 
-inherit audio-plugin-common
+inherit audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion
 PLUGIN_INSTALL_DIR = "/opt/plugins"
 
-DEPENDS = "lv2 pkgconfig-native"
+DEPENDS = "lv2"
 
 SRC_URI = "gitsm://github.com/elk-community/GxPlugins.lv2;protocol=https;nobranch=1"
 SRCREV = "b830dca668af2bbf6f90d5b35097f2790482ba06"

@@ -3,13 +3,13 @@ HOMEPAGE = "https://github.com/elk-community/SHIRO-Plugins"
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=84dcc94da3adb52b53ae4fa38fe49e5d"
 
-inherit audio-plugin-common
+inherit audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion
 PLUGIN_INSTALL_DIR = "/opt/plugins"
 
 # dpf/ is a git submodule (DISTRHO Plugin Framework)
-DEPENDS = "pkgconfig-native"
+DEPENDS = ""
 
 SRC_URI = "gitsm://github.com/elk-community/SHIRO-Plugins;protocol=https;nobranch=1"
 SRCREV = "7850099cec1153cc40b4c007e21723437a77aecf"

@@ -3,13 +3,13 @@ HOMEPAGE = "https://github.com/elk-community/dragonfly-reverb"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
-inherit audio-plugin-common
+inherit audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion
 PLUGIN_INSTALL_DIR = "/opt/plugins"
 
 # dpf/ is a git submodule (DISTRHO Plugin Framework); freeverb3/ is inlined in the repo
-DEPENDS = "pkgconfig-native"
+DEPENDS = ""
 
 SRC_URI = "gitsm://github.com/elk-community/dragonfly-reverb;protocol=https;nobranch=1"
 SRCREV = "a91c5122c46a0f6fec5f838ad063b25ad391973a"

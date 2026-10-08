@@ -7,13 +7,13 @@ LIC_FILES_CHKSUM = "\
     file://tuna/COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
 "
 
-inherit audio-plugin-common
+inherit audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion
 PLUGIN_INSTALL_DIR = "/opt/plugins"
 
 # fat1 and tuna have a robtk git submodule; testsignal does not
-DEPENDS = "lv2 fftw pkgconfig-native"
+DEPENDS = "lv2 fftw"
 
 SRC_URI = "\
     gitsm://github.com/elk-community/fat1.lv2;protocol=https;nobranch=1;name=fat1;destsuffix=fat1 \

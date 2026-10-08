@@ -3,12 +3,12 @@ HOMEPAGE = "https://github.com/ssj71/infamousPlugins"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f"
 
-inherit audio-plugin-common cmake
+inherit audio-plugin-common cmake pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion
 PLUGIN_INSTALL_DIR = "/opt/plugins"
 
-DEPENDS = "lv2 pkgconfig-native"
+DEPENDS = "lv2"
 
 SRC_URI = "git://github.com/ssj71/infamousPlugins;protocol=https;nobranch=1"
 SRCREV = "8c0e11ecac624e014caba00e5cf4fb0ca2faa806"

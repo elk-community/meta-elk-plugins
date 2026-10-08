@@ -14,12 +14,12 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=903d0fc86333f132c49874fae0bc8c62"
 #                                → math_approx
 #                                → ea_variant
 SRC_URI = " \
-    git://github.com/elk-community/jc303;protocol=https;nobranch=1;name=jc303;destsuffix=git \
-    gitsm://github.com/free-audio/clap-juce-extensions.git;protocol=https;nobranch=1;name=clap;destsuffix=git/lib/juce-clap-extensions-src \
-    git://github.com/Chowdhury-DSP/chowdsp_utils.git;protocol=https;nobranch=1;name=chowdsp;destsuffix=git/lib/chowdsp_utils-src \
-    gitsm://github.com/jatinchowdhury18/RTNeural.git;protocol=https;nobranch=1;name=rtneural;destsuffix=git/lib/rtneural-src \
-    git://github.com/Chowdhury-DSP/math_approx.git;protocol=https;nobranch=1;name=mathapprox;destsuffix=git/lib/math_approx-src \
-    git://github.com/eyalamirmusic/Variant.git;protocol=https;nobranch=1;name=eavariant;destsuffix=git/lib/ea_variant-src \
+    git://github.com/elk-community/jc303;protocol=https;nobranch=1;name=jc303;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX} \
+    gitsm://github.com/free-audio/clap-juce-extensions.git;protocol=https;nobranch=1;name=clap;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX}/lib/juce-clap-extensions-src \
+    git://github.com/Chowdhury-DSP/chowdsp_utils.git;protocol=https;nobranch=1;name=chowdsp;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX}/lib/chowdsp_utils-src \
+    gitsm://github.com/jatinchowdhury18/RTNeural.git;protocol=https;nobranch=1;name=rtneural;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX}/lib/rtneural-src \
+    git://github.com/Chowdhury-DSP/math_approx.git;protocol=https;nobranch=1;name=mathapprox;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX}/lib/math_approx-src \
+    git://github.com/eyalamirmusic/Variant.git;protocol=https;nobranch=1;name=eavariant;destsuffix=${BB_GIT_DEFAULT_DESTSUFFIX}/lib/ea_variant-src \
 "
 SRCREV_jc303 = "9f3456ee729edbcbc1a2913089ea0a834758c658"
 SRCREV_clap = "e1f67893cc409a40c1154fa2e78c97046da24ce0"
@@ -30,9 +30,8 @@ SRCREV_eavariant = "3fce49cfca50ba3b05026d41ffc4911a8e653378"
 SRCREV_FORMAT = "jc303"
 
 PV = "0.12.3+git"
-S = "${UNPACKDIR}/git"
 
-inherit cmake audio-plugin-common
+inherit cmake audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion.
 PLUGIN_INSTALL_DIR = "/opt/plugins"
@@ -50,7 +49,6 @@ DEPENDS = " \
     libxinerama \
     libxrandr \
     libxcursor \
-    pkgconfig-native \
 "
 
 EXTRA_OECMAKE = " \

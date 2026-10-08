@@ -3,6 +3,7 @@ From: Elk Audio <build@elk.audio>
 Date: Fri, 01 Jan 2021 00:00:00 +0000
 Subject: [PATCH] Add OBXF_BUILD_CLAP option to disable CLAP format
 
+Upstream-Status: Inappropriate [Elk build configuration]
 Allow disabling CLAP plugin format via -DOBXF_BUILD_CLAP=OFF.
 ---
  CMakeLists.txt | 8 ++++++--

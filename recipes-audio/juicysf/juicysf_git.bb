@@ -9,7 +9,7 @@ SRC_URI = " \
 "
 SRCREV = "e508cb08a6f67c9d8b3ea7bf602111c5f4654c26"
 PV = "3.0.0+git"
-inherit cmake audio-plugin-common
+inherit cmake audio-plugin-common pkgconfig
 
 # Explicit assignment ensures the variable is in the datastore for FILES expansion.
 PLUGIN_INSTALL_DIR = "/opt/plugins"
@@ -28,7 +28,6 @@ DEPENDS = " \
     libxinerama \
     libxrandr \
     libxcursor \
-    pkgconfig-native \
 "
 
 # BUILD_SHARED_LIBS=ON: link against libfluidsynth.so rather than the full
